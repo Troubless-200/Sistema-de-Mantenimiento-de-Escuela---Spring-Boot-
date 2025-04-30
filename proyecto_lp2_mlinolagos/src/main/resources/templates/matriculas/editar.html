@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Inicio</title>
+</head>
+<link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
+
+<body>
+
+	<div class="container">
+		<form method="post" th:object="${matriculas}" th:action="@{/matriculas/crear}">
+			<div class="form-group">
+				<label for="txtImatricula">ID Matricula</label>
+				<input th:field="*{idmatricula}" type="text" class="form-control" id="txtIdmatricula" readonly="true">
+			</div>
+			
+			<div class="form-group">
+							<label for="txtFecha">Fecha</label>
+							<input th:field="*{fecha}" type="text" class="form-control" id="txtFecha" >
+						</div>
+						<div class="form-group">
+							<label for="txtGrado">Grado</label>
+							<input th:field="*{grado}" type="text" class="form-control" id="txtGrado">
+						</div>
+						
+			<div class="form-group">
+						<label for="alumno">ID Alumno</label>
+						<select th:field="*{alumno}" class="form-control">
+							<option th:each="fila:${listaAlumnos}" 
+								th:value="${fila.idalumno}" th:text="${fila.carrera}"   ></option>
+						</select>
+					</div>
+			
+			<button type="submit" class="btn btn-primary">Editar</button>
+		</form>
+	</div>
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Inicio</title>
+</head>
+<link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
+
+<body>
+
+	<div class="container">
+			<form method="post" th:object="${cursosalumnos}" th:action="@{/curso_alumnos/eliminar}">
+				
+				<div class="form-group">
+									<label for="txtCursosalumnosid">Curso Alumno id</label>
+									<input th:field="*{cursosalumnosid}" type="text" class="form-control" id="txtCursosalumnosid" >
+			
+				<div class="form-group">
+										<label for="alumno">ID alumno</label>
+										<select th:field="*{alumno}" class="form-control">
+											<option th:each="fila:${listaAlumnos}" 
+												th:value="${fila.idalumno}" th:text="${fila.carrera}"   ></option>
+										</select>
+									</div>
+									
+									<div class="form-group">
+															<label for="curso">ID Curso</label>
+															<select th:field="*{curso}" class="form-control">
+																<option th:each="fila:${listaCursos}" 
+																	th:value="${fila.idcurso}" th:text="${fila.nombrecurso}"   ></option>
+															</select>
+														</div>
+														
+
+														<div class="form-group">
+															<label for="txtNota">Nota</label>
+															<input th:field="*{nota}" type="text" class="form-control" id="txtNota">
+														</div>
+			<button type="submit" class="btn btn-primary">Guardar</button>
+		</form>
+	</div>
+
+
+
+
+</body>
+
+</html>
