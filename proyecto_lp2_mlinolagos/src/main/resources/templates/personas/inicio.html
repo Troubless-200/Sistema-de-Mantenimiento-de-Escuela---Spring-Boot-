@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Inicio</title>
+</head>
+<link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
+
+<body>
+	
+	<h3>Mantenimiento Personas</h3>
+
+	<li class="nav-item active">
+			                <a class="nav-link" href="/Menu/InicioProyecto"> Volver a Inicio <span class="sr-only">(actual)</span></a>
+			            </li>
+	
+	<div class="container mt-4">
+		
+		<a th:href="@{/personas/crear}" class="btn btn-primary">Crear Persona</a>
+		
+		<table class="table">
+			<thead>
+				<tr>
+					<th scope="col">ID Persona</th>
+					<th scope="col">Nombre</th>
+					<th scope="col">Apellido</th>
+					<th scope="col">RUT</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="fila:${listaPersonas}">
+					<td th:text="${fila.idpersona}"></td>
+					<td th:text="${fila.nombre}"></td>
+					<td th:text="${fila.apellido}"></td>
+					<td th:text="${fila.rut}"></td>
+					<td>
+						<a th:href="@{/personas/editar/{idpersona} (idpersona=${fila.idpersona}) }"
+							class="btn btn-warning btn-sm">Editar</a>
+						<a th:href="@{/personas/eliminar/{idpersona} (idpersona=${fila.idpersona}) }"
+							class="btn btn-danger btn-sm">Eliminar</a>
+					</td>
+				</tr>
+				
+			</tbody>
+		</table>
+
+	</div>
+
+
+</body>
+
+</html>

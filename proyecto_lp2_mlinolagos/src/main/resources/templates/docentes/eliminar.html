@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Inicio</title>
+</head>
+<link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
+
+<body>
+
+	<div class="container">
+		<form method="post" th:object="${docentes}" th:action="@{/docentes/eliminar}">
+			<div class="form-group">
+				<label for="txtIddocente">ID Docente</label>
+				<input th:field="*{iddocente}" type="text" class="form-control" id="txtIddocente" readonly="true">
+			</div>
+			<div class="form-group">
+							<label for="txtTipocontrato">Tipo Contrato</label>
+							<input th:field="*{tipocontrato}" type="text" class="form-control" id="txtTipocontrato" >
+						</div>
+			
+			<div class="form-group">
+						<label for="persona">ID Persona</label>
+						<select th:field="*{persona}" class="form-control">
+							<option th:each="fila:${listaPersonas}" 
+								th:value="${fila.idpersona}" th:text="${fila.apellido}"   ></option>
+						</select>
+					</div>
+			<button type="submit" class="btn btn-primary">Eliminar</button>
+		</form>
+	</div>
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,173 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    background-size: cover;
+    background-position: center;
+}
+
+
+/*ENCABEZADO DE NAVEGADOR*/
+header {
+    background-color: rgba(51, 51, 51, 0.9);
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+}
+
+nav {
+    background-color: #444;
+    padding: 10px 0;
+    text-align: center;
+}
+
+nav a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    opacity: 0.9;
+}
+
+
+/*FORMULARIO*/
+h2 {
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.form-group input, .form-group textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.form-group button {
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.form-group button:hover {
+    background-color: #555;
+}
+
+#nickname-form {
+    margin-bottom: 20px;
+}
+
+#welcome-message {
+    display: none;
+    text-align: center;
+    padding: 20px;
+    background-color: #e7f5e7;
+    border: 1px solid #4CAF50;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+#welcome-message h3 {
+    color: #4CAF50;
+}
+
+#welcome-message.animate {
+    animation: fadeIn 2s ease-in;
+}
+
+.hidden {
+    display: none;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+
+/*BOTONES SOCIALES*/
+.social-icons {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.social-icons h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+
+
+.social-btn {
+    display: inline-block;
+    margin: 0 10px;
+    padding: 10px;
+    font-size: 24px;
+    border-radius: 50%;
+    color: white;
+    background-color: #333;
+    transition: background-color 0.3s ease;
+}
+
+
+.social-btn:hover {
+    background-color: #555;
+}
+
+.social-btn i {
+    color: white;
+}
+
+.facebook {
+    background-color: #3b5998;
+}
+
+.twitter {
+    background-color: #00acee;
+}
+
+.instagram {
+    background-color: #e4405f;
+}
+
+
+/*PIE DE PAGINA*/
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}

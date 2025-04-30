@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Inicio</title>
+</head>
+<link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
+
+<body>
+	
+	<h3>Mantenimiento Alumnos</h3>
+
+	<li class="nav-item active">
+				                <a class="nav-link" href="/Menu/InicioProyecto"> Volver a Inicio <span class="sr-only">(actual)</span></a>
+				            </li>
+	
+	<div class="container mt-4">
+		
+		<a th:href="@{/alumnos/crear}" class="btn btn-primary">Crear Alumno</a>
+		
+		<table class="table">
+			<thead>
+				<tr>
+					<th scope="col">ID Alumno</th>
+					<th scope="col">ID Persona</th>
+					<th scope="col">Carrera</th>
+					<th scope="col">Facultad</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="fila:${listaAlumnos}">
+					<td th:text="${fila.idalumno}"></td>
+					<td th:text="${fila.persona.idpersona}"></td>
+					<td th:text="${fila.carrera}"></td>
+					<td th:text="${fila.facultad}"></td>
+					<td>
+						<a th:href="@{/alumnos/editar/{idalumno} (idalumno=${fila.idalumno}) }"
+							class="btn btn-warning btn-sm">Editar</a>
+						<a th:href="@{/alumnos/eliminar/{idalumno} (idalumno=${fila.idalumno}) }"
+							class="btn btn-danger btn-sm">Eliminar</a>
+					</td>
+				</tr>
+				
+			</tbody>
+		</table>
+
+	</div>
+
+
+</body>
+
+</html>

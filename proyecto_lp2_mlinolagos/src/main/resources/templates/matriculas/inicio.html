@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Inicio</title>
+</head>
+<link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
+
+<body>
+	
+	<h3>Mantenimiento Matriculas </h3>
+
+	<li class="nav-item active">
+			                <a class="nav-link" href="/Menu/InicioProyecto"> Volver a Inicio <span class="sr-only">(actual)</span></a>
+			            </li>
+	
+	<div class="container mt-4">
+		
+		<a th:href="@{/matriculas/crear}" class="btn btn-primary">Crear Matricula</a>
+		
+		<table class="table">
+			<thead>
+				<tr>
+					<th scope="col">ID Matricula</th>
+					<th scope="col">Fecha</th>
+					<th scope="col">Grado</th>
+					<th scope="col">ID Alumno</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="fila:${listaMatriculas}">
+					<td th:text="${fila.idmatricula}"></td>
+					<td th:text="${fila.fecha}"></td>
+					<td th:text="${fila.grado}"></td>
+					<td th:text="${fila.alumno.idalumno}"></td>
+					<td>
+						<a th:href="@{/matriculas/editar/{idmatricula} (idmatricula=${fila.idmatricula}) }"
+							class="btn btn-warning btn-sm">Editar</a>
+						<a th:href="@{/matriculas/eliminar/{idmatricula} (idmatricula=${fila.idmatricula}) }"
+							class="btn btn-danger btn-sm">Eliminar</a>
+					</td>
+				</tr>
+				
+			</tbody>
+		</table>
+
+	</div>
+
+
+</body>
+
+</html>

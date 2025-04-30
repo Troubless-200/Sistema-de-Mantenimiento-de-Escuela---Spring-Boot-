@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Inicio</title>
+</head>
+<link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
+
+<body>
+	
+	<h3>Mantenimiento Cursos Alumnos</h3>
+
+	<li class="nav-item active">
+			                <a class="nav-link" href="/Menu/InicioProyecto"> Volver a Inicio <span class="sr-only">(actual)</span></a>
+			            </li>
+	
+	<div class="container mt-4">
+		
+		<a th:href="@{/cursos_alumnos/crear}" class="btn btn-primary">Crear Cursos y alumnos</a>
+		
+		<table class="table">
+			<thead>
+				<tr>
+					<th scope="col">Curso alumno id</th>
+					<th scope="col">ID Alumno </th>
+					<th scope="col">ID Curso</th>
+					<th scope="col">nota</th>
+					
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="fila:${listaCursos_Alumnos}">
+					<td th:text="${fila.cursosalumnosid}"></td>
+					<td th:text="${fila.alumno.idalumno}"></td>
+					<td th:text="${fila.curso.idcurso}"></td>
+					<td th:text="${fila.nota}"></td>
+					 
+					<td>
+						<a th:href="@{/cursos_alumnos/editar/{cursosalumnosid} (cursosalumnosid=${fila.cursosalumnosid}) }"
+							class="btn btn-warning btn-sm">Editar</a>
+						<a th:href="@{/cursos_alumnos/eliminar/{cursosalumnosid} (cursosalumnosid=${fila.cursosalumnosid}) }"
+							class="btn btn-danger btn-sm">Eliminar</a>
+					</td>
+				</tr>
+				
+			</tbody>
+		</table>
+
+	</div>
+
+
+</body>
+
+</html>
